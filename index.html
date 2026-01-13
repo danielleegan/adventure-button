@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the Outernet adventure button</title>
+    <link rel="icon" href="icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>the Outernet adventure button</h1>
+            <p class="tagline">get a mystery side quest nearby!</p>
+        </header>
+
+        <main>
+            <section class="location-section">
+                <button id="locateBtn" class="btn btn-primary">
+                    <span class="pin-icon">📍</span>
+                    locate me
+                </button>
+                <p class="instruction">or choose a location on the map:</p>
+                <div id="map" class="map-container"></div>
+                <input type="hidden" id="selectedLat" />
+                <input type="hidden" id="selectedLng" />
+            </section>
+
+            <section class="vibe-section">
+                <h2>optional - pick a vibe:</h2>
+                <div class="vibe-options">
+                    <label class="vibe-option">
+                        <input type="radio" name="vibe" value="caffeine" />
+                        <span class="emoji">😵‍💫</span>
+                        <span class="vibe-text">caffeine fix</span>
+                    </label>
+                    <label class="vibe-option">
+                        <input type="radio" name="vibe" value="food" />
+                        <span class="emoji">🤤</span>
+                        <span class="vibe-text">yummy snack</span>
+                    </label>
+                    <label class="vibe-option">
+                        <input type="radio" name="vibe" value="bigfood" />
+                        <span class="emoji">😛</span>
+                        <span class="vibe-text">big food</span>
+                    </label>
+                    <label class="vibe-option">
+                        <input type="radio" name="vibe" value="activity" />
+                        <span class="emoji">🤠</span>
+                        <span class="vibe-text">fun activity!</span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="action-section">
+                <button id="createAdventureBtn" class="btn btn-primary btn-large">
+                    create adventure!
+                </button>
+            </section>
+
+            <section class="adventure-section" id="adventureSection" style="display: none;">
+                <a id="googleMapsLink" href="#" target="_blank" class="btn btn-primary btn-large">take me there, oh google maps! <img src="icons/navigation.svg" alt="" style="width: 1em; height: 1em; vertical-align: middle; margin-left: 0.25em; filter: brightness(0) invert(1);"></a>
+                <p class="reveal-instruction">
+                    we recommend keeping it a surprise until you arrive, but you can tap below to reveal your adventure
+                </p>
+                <div id="adventureReveal" class="adventure-reveal">
+                    <button id="revealBtn" class="reveal-btn">tap to reveal your adventure</button>
+                    <div id="adventureContent" class="adventure-content" style="display: none;"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>this is a work in progress! more features coming very soon. text us with feedback <a href="sms:+14157795090">415-779-5090</a>.</p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+

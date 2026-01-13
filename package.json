@@ -1,0 +1,19 @@
+{
+  "name": "adventure-button",
+  "version": "1.0.0",
+  "description": "A web application that generates random adventures near you in San Francisco, California, using data from Supabase databases.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.90.1",
+    "openai": "^6.16.0",
+    "p-limit": "^7.2.0",
+    "dotenv": "^16.4.5"
+  }
+}
