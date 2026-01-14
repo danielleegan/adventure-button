@@ -1704,8 +1704,6 @@ function displayAdventure(adventure) {
     infoBarEl.innerHTML = infoBarHTML;
     infoBarEl.style.display = infoBarHTML ? 'flex' : 'none';
 
-    // Show reveal instruction
-    document.querySelector('.reveal-instruction').style.display = 'block';
 
     // Format content based on type
     let contentHTML = '';
@@ -1765,7 +1763,7 @@ function displayAdventure(adventure) {
     // Reset reveal button
     document.getElementById('adventureContent').style.display = 'none';
     document.getElementById('revealBtn').style.display = 'block';
-    document.getElementById('revealBtn').textContent = 'tap to reveal your adventure';
+    document.getElementById('revealBtn').innerHTML = 'tap to reveal your adventure<br><br><i>(we recommend keeping it a surprise until you arrive)</i>';
     // Reset box to green background
     document.getElementById('adventureReveal').classList.remove('revealed');
 }
@@ -1796,9 +1794,9 @@ function displayFutureAdventure(adventure) {
         disclaimerEl.style.textAlign = 'center';
         disclaimerEl.style.fontFamily = "Georgia, 'Times New Roman', serif";
         disclaimerEl.style.padding = '0 16px 10px 16px';
-        // Insert before the reveal instruction
-        const revealInstruction = document.querySelector('.reveal-instruction');
-        revealInstruction.parentNode.insertBefore(disclaimerEl, revealInstruction);
+        // Insert before the adventure reveal
+        const adventureReveal = document.getElementById('adventureReveal');
+        adventureReveal.parentNode.insertBefore(disclaimerEl, adventureReveal);
     }
     disclaimerEl.textContent = message;
     disclaimerEl.style.display = 'block';
@@ -1902,8 +1900,6 @@ function displayFutureAdventure(adventure) {
     infoBarEl.innerHTML = infoBarHTML;
     infoBarEl.style.display = infoBarHTML ? 'flex' : 'none';
 
-    // Show reveal instruction
-    document.querySelector('.reveal-instruction').style.display = 'block';
 
     // Format content based on type
     let contentHTML = '';
@@ -1963,7 +1959,7 @@ function displayFutureAdventure(adventure) {
     // Reset reveal button
     document.getElementById('adventureContent').style.display = 'none';
     document.getElementById('revealBtn').style.display = 'block';
-    document.getElementById('revealBtn').textContent = 'tap to reveal your adventure';
+    document.getElementById('revealBtn').innerHTML = 'tap to reveal your adventure<br><br><i>(we recommend keeping it a surprise until you arrive)</i>';
     // Reset box to green background
     document.getElementById('adventureReveal').classList.remove('revealed');
 }
@@ -1984,7 +1980,6 @@ function displayNothingNearby() {
     if (disclaimerEl) {
         disclaimerEl.style.display = 'none';
     }
-    document.querySelector('.reveal-instruction').style.display = 'none';
     
     // Show "nothing nearby :(" message
     document.getElementById('adventureContent').innerHTML = `
